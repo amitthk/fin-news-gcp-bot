@@ -1,0 +1,21 @@
+{
+  "name": "trends-finance-gcf",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && functions-framework --target=scrapeTrendsAndFinance --source=dist",
+    "deploy": "gcloud run deploy trends-finance --source . --base-image=nodejs24"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.4.0",
+    "axios": "^1.6.0",
+    "googleapis": "^134.0.0",
+    "playwright-webkit": "^1.40.0",
+    "dayjs": "^1.11.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
